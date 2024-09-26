@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+{% block title %} Add article form {% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1> Add article form</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{form.title}}
+            {{form.announcement}}
+            {{form.full_text}}
+            {{form.date}}
+            <span>{{error}}</span>
+            <button class = 'btn btn-success' type = 'submit'>Add article</button>
+        </form>
+    </div>
+{% endblock %}
